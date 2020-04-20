@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Install JDK 1.8
-        uses: joschi/setup-jdk@v1.0.0
+        uses: joschi/setup-jdk@v1
         with:
           java-version: 'openjdk8'
           architecture: 'x32'
