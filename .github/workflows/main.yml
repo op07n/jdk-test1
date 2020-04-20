@@ -1,0 +1,14 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@latest
+      - uses: joschi/setup-jdk@v1  
+        with:
+          java-version: '8'
+          architecture: 'x32'
+      - run: java -cp java HelloWorldApp
