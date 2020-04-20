@@ -18,7 +18,7 @@ jobs:
           architecture: x86
 
       - name: Build 
-        run: java -cp java HelloWorldApp
+        run: java -cp java "$Env:GITHUB_WORKSPACE\HelloWorldApp.java"
 #      - name: Build with Maven
 #        run: mvn -B clean install --file pom.xml
 
