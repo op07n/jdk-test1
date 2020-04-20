@@ -1,18 +1,25 @@
-name: CI
-
-on: [push]
+---
+name: Continuous Integration Build
+on:
+  push:
+    branches:
+      - master
 
 jobs:
-  build:
+  build_java8:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@latest
-      - uses: joschi/setup-jdk@v1  
+      - uses: actions/checkout@v1
+      - name: Install JDK 1.8
+        uses: joschi/setup-jdk@v1.0.0
         with:
-          java-version: '8'
+          java-version: 'openjdk8'
           architecture: 'x32'
-      - run: java -cp java HelloWorldApp
 
+      - name: Build 
+        run: java -cp java HelloWorldApp
+#      - name: Build with Maven
+#        run: mvn -B clean install --file pom.xml
 
 
 
